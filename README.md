@@ -37,3 +37,9 @@ qe
 
 **R1,R2>
 uo
+
+Change the KEY_A (which is key A on keyboard) with any other letter for letters.
+
+more here:
+
+http://www.pjrc.com/teensy/td_keyboard.html
