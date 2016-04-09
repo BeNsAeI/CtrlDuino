@@ -43,3 +43,7 @@ Change the KEY_A (which is key A on keyboard) with any other letter for letters.
 more here:
 
 http://www.pjrc.com/teensy/td_keyboard.html
+
+Watch it in action here:
+
+https://youtu.be/AOS0tR77WrE
