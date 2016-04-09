@@ -19,3 +19,21 @@ Important information:
 -make sure you go to Tools > USB Type > Keyboard *
 
 **otherwise code won't compile!
+
+
+sample Output:
+
+<Directions Pad:>
+wsad
+
+<Triangle, X, Aquare, Circle>
+ikjl
+
+<Select, Start>
+fh
+
+<L1,L2>
+qe
+
+<R1,R2>
+uo
