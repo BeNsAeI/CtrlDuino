@@ -23,17 +23,17 @@ Important information:
 
 sample Output:
 
-<Directions Pad:>
+**Directions Pad>
 wsad
 
-<Triangle, X, Aquare, Circle>
+**Triangle, X, Aquare, Circle>
 ikjl
 
-<Select, Start>
+**Select, Start>
 fh
 
-<L1,L2>
+**L1,L2>
 qe
 
-<R1,R2>
+**R1,R2>
 uo
