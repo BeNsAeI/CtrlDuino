@@ -8,7 +8,7 @@ use it at your own risk
 Important information:
 -This dow not need any drivers, it literally behaves like a keyboard!
 
--I used itt to create a gamepad hence it only has 14 keys defined
+-I used it to create a gamepad hence it only has 14 keys defined
 
 -different switches might require different logic
 
