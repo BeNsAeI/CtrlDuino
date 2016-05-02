@@ -1,3 +1,25 @@
+int W = PIN_B0;
+int S = PIN_B1;
+int D = PIN_B2;
+int A = PIN_B3;
+int I = PIN_B7;
+int K = PIN_D0;
+int L = PIN_D1;
+int J = PIN_D2;
+int O = PIN_D3;
+int U = PIN_C6;
+int Q = PIN_F0;
+int E = PIN_F1;
+int H = PIN_F4;
+int F = PIN_F5;
+int joyPin1 = PIN_F7;                 // slider variable connecetd to analog pin 0
+int joyPin2 = PIN_B6;                 // slider variable connecetd to analog pin 1
+int joyPin3 = PIN_B5;                 // slider variable connecetd to analog pin 2
+int joyPin4 = PIN_B4;                 // slider variable connecetd to analog pin 3
+int value1 = 0;                  // variable to read the value from the analog pin 0
+int value2 = 0;                  // variable to read the value from the analog pin 1
+int value3 = 0;                  // variable to read the value from the analog pin 2
+int value4 = 0;                  // variable to read the value from the analog pin 3
 void setup()   {                
   Serial.begin(9600);
   pinMode(PIN_F0, INPUT_PULLUP);
@@ -16,9 +38,29 @@ void setup()   {
   pinMode(PIN_B3, INPUT_PULLUP);
   pinMode(PIN_D6, OUTPUT);
 }
-
+ int treatValue(int data) {
+  return data;
+  return (data * 9 / 1024) + 48;
+ }
+ void getJoystick()
+ {
+  value1 = analogRead(joyPin1);
+  delay(100);
+  value2 = analogRead(joyPin2);
+  delay(100);
+  value1 = analogRead(joyPin3);
+  delay(100);
+  value2 = analogRead(joyPin4);
+  Serial.print(treatValue(value1));
+  Serial.print(", ");
+  Serial.println(treatValue(value2));
+    Serial.print(treatValue(value3));
+  Serial.print(", ");
+  Serial.println(treatValue(value4));
+ }
 void loop()                     
 {
+  getJoystick();
   int DL = 50;
   digitalWrite(PIN_D6,HIGH);
   while(true)
