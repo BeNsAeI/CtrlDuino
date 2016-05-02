@@ -48,13 +48,13 @@ void setup()   {
  void getJoystick()
  {
   value1 = analogRead(joyPin1);
-  delay(5);
+  
   value2 = analogRead(joyPin2);
-  delay(5);
+  
   value3 = analogRead(joyPin3);
-  delay(5);
+  
   value4 = analogRead(joyPin4);
-  delay(5);
+  
   if(treatValue(value3) > 600)
     xReading = xReading - ((treatValue(value3)- 600)/10);
   else if(treatValue(value3) < 400)
@@ -71,7 +71,7 @@ void loop()
   Mouse.move(xReading, yReading, 0);
   xReading = 0;
   yReading = 0;
-  int DL = 50;
+  int DL = 25;
   digitalWrite(PIN_D6,HIGH);
   while(true)
   {
