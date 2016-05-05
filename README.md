@@ -6,37 +6,45 @@ use it at your own risk
 
 
 Important information:
--This dow not need any drivers, it literally behaves like a keyboard!
+-This does not need any drivers, it behaves like a keyboard!
 
 -I used it to create a gamepad hence it only has 14 keys defined
 
--different switches might require different logic
+-Different switches might require different logic (Active high or low, either way they are digital input)
 
-**You might need to change  if (!digitalRead(PIN_F0)) to  if (digitalRead(PIN_F0)) (without "!") to match your switch
+**You might need to change  if (!digitalRead(PIN_F0)) to  if (digitalRead(PIN_F0)) (without "!") to match your switch in case it was active high.
+
+-Here you can find the analog joystick : https://www.sparkfun.com/products/9426
 
 -make sure you go to Tools > Boad > Teensy 2.0
 
--make sure you go to Tools > USB Type > Keyboard *
+-make sure you go to Tools > USB Type > Keyboard + Mouse *
 
 **otherwise code won't compile!
 
 
 sample Output:
 
-**Directions Pad>
+**Directions Pad> 
 wsad
 
-**Triangle, X, Aquare, Circle>
+**Triangle, X, Aquare, Circle> 
 ikjl
 
-**Select, Start>
+**Select, Start> 
 fh
 
-**L1,L2>
+**L1,L2> 
 qe
 
-**R1,R2>
+**R1,R2> 
 uo
+
+** Analog Joystick on the left> 
+wsad
+
+** Analog Joystick on the right> 
+moves the mouse
 
 Change the KEY_A (which is key A on keyboard) with any other letter for letters.
 
