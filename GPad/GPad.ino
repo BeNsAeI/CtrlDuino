@@ -4,9 +4,9 @@ int L = PIN_B2;
 int K = PIN_B3;
 int D = PIN_B7;
 int S = PIN_D0;
-int Q = PIN_D1;
-int E = PIN_D2;
-int O = PIN_D3;
+int Q = PIN_D2;
+int E = PIN_D3;
+int O = PIN_D1;
 int U = PIN_C6;
 int W = PIN_F0;
 int A = PIN_F1;
@@ -76,6 +76,16 @@ void loop()
   while(true)
   {
     delay(DL);
+    if (!digitalRead(O))
+   {
+     Mouse.set_buttons(1, 0, 0);
+     delay(250);
+   }
+   if (!digitalRead(Q))
+   {
+     Mouse.set_buttons(0, 0, 1);
+     delay(250);
+   }
     if (!digitalRead(I))
    {
      Keyboard.press(KEY_I);
@@ -146,13 +156,13 @@ void loop()
    {
     Keyboard.release(KEY_H);
    }
-   if (!digitalRead(Q))
+  /* if (!digitalRead(Q))
    {
      Keyboard.press(KEY_Q);
    }   else
    {
     Keyboard.release(KEY_Q);
-   }
+   }*/
    if (!digitalRead(E))
    {
      Keyboard.press(KEY_E);
@@ -166,21 +176,21 @@ void loop()
    }   else
    {
     Keyboard.release(KEY_U);
-   }
+   }/*
    if (!digitalRead(O))
    {
      Keyboard.press(KEY_O);
    }   else
    {
     Keyboard.release(KEY_O);
-   }
+   }*/
    if( 
-   digitalRead(Q) &&
-   digitalRead(E) &&
+   //digitalRead(Q) &&
+   //digitalRead(E) &&
    digitalRead(H) &&
    digitalRead(F) &&
-   digitalRead(U) &&
-   digitalRead(O) &&
+   //digitalRead(U) &&
+   //digitalRead(O) &&
    digitalRead(I) &&
    digitalRead(K) &&
    digitalRead(J) &&
@@ -208,5 +218,6 @@ void loop()
   Keyboard.release(KEY_E);
   Keyboard.release(KEY_U);
   Keyboard.release(KEY_O);
+  Mouse.set_buttons(0, 0, 0);
 }
 
