@@ -119,41 +119,74 @@ void loop()
    {
     Keyboard.release(KEY_K);
    }
-   if (!digitalRead(S) || ((value2) > 600))
+   if (!digitalRead(S))
    {
      Keyboard.press(KEY_S);
-     getJoystick();
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
     Keyboard.release(KEY_S);
    }
-   if (!digitalRead(D) ||((value1) > 600))
+   if (((value2) > 600))
+   {
+     Keyboard.press(KEY_DOWN);
+     getJoystick();
+     digitalWrite(PIN_D6,HIGH);
+   }   else
+   {
+    Keyboard.release(KEY_DOWN);
+   }
+   
+   if (!digitalRead(D))
    {
      Keyboard.press(KEY_D);
-     getJoystick();
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
     Keyboard.release(KEY_D);
    }
-   if (!digitalRead(A) || ((value1) < 400))
+   if (((value1) > 600))
+   {
+     Keyboard.press(KEY_RIGHT);
+     getJoystick();
+     digitalWrite(PIN_D6,HIGH);
+   }   else
+   {
+    Keyboard.release(KEY_RIGHT);
+   }
+   if (!digitalRead(A))
    {
      Keyboard.press(KEY_A);
-     getJoystick();
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
     Keyboard.release(KEY_A);
    }
-   if (!digitalRead(W) ||((value2) < 400))
+      if (((value1) < 400))
    {
-     Keyboard.press(KEY_W);
+     Keyboard.press(KEY_LEFT);
      getJoystick();
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
+    Keyboard.release(KEY_LEFT);
+   }
+   if (!digitalRead(W))
+   {
+     Keyboard.press(KEY_W);
+     digitalWrite(PIN_D6,HIGH);
+   }   else
+   {
     Keyboard.release(KEY_W);
+   }
+    if (((value2) < 400))
+   {
+     Keyboard.press(KEY_UP);
+     getJoystick();
+     digitalWrite(PIN_D6,HIGH);
+   }   else
+   {
+    Keyboard.release(KEY_UP);
    }
    if (!digitalRead(F))
    {
@@ -243,6 +276,10 @@ void loop()
   Keyboard.release(KEY_E);
   Keyboard.release(KEY_U);
   Keyboard.release(KEY_O);
+  Keyboard.release(KEY_UP);
+  Keyboard.release(KEY_DOWN);
+  Keyboard.release(KEY_LEFT);
+  Keyboard.release(KEY_RIGHT);
   Mouse.set_buttons(0, 0, 0);
   digitalWrite(PIN_D6,LOW);
 }
