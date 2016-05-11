@@ -35,13 +35,13 @@ ikjl
 fh
 
 **L1,L2> 
-qe
+<right-click>e
 
 **R1,R2> 
-uo
+<left-click>u
 
 ** Analog Joystick on the left> 
-wsad
+<Arrow keys>
 
 ** Analog Joystick on the right> 
 moves the mouse
