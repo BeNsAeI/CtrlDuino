@@ -79,13 +79,13 @@ void loop()
    {
      Mouse.set_buttons(1, 0, 0);
      digitalWrite(PIN_D6,HIGH);
-     delay(100);
+     delay(10);
    }
    if (!digitalRead(Q))
    {
      digitalWrite(PIN_D6,HIGH);
      Mouse.set_buttons(0, 0, 1);
-     delay(100);
+     delay(10);
    }
     if (!digitalRead(I))
    {
@@ -237,12 +237,12 @@ void loop()
     Keyboard.release(KEY_O);
    }*/
    if( 
-   //digitalRead(Q) &&
+   digitalRead(Q) &&
    //digitalRead(E) &&
    digitalRead(H) &&
    digitalRead(F) &&
    //digitalRead(U) &&
-   //digitalRead(O) &&
+   digitalRead(O) &&
    digitalRead(I) &&
    digitalRead(K) &&
    digitalRead(J) &&
@@ -258,6 +258,7 @@ void loop()
      )
    {
       getJoystick();
+      Mouse.set_buttons(0, 0, 0);
       digitalWrite(PIN_D6,LOW);
       break;
    }
