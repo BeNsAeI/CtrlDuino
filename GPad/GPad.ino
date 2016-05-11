@@ -190,19 +190,19 @@ void loop()
    }
    if (!digitalRead(F))
    {
-     Keyboard.press(KEY_F);
+     Keyboard.press(KEY_BACKSPACE);
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
-    Keyboard.release(KEY_F);
+    Keyboard.release(KEY_BACKSPACE);
    }
    if (!digitalRead(H))
    {
-     Keyboard.press(KEY_H);
+     Keyboard.press(KEY_ENTER);
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
-    Keyboard.release(KEY_H);
+    Keyboard.release(KEY_ENTER);
    }
   /* if (!digitalRead(Q))
    {
@@ -271,8 +271,8 @@ void loop()
   Keyboard.release(KEY_D);
   Keyboard.release(KEY_A);
   Keyboard.release(KEY_W);
-  Keyboard.release(KEY_F);
-  Keyboard.release(KEY_H);
+  Keyboard.release(KEY_BACKSPACE);
+  Keyboard.release(KEY_ENTER);
   Keyboard.release(KEY_Q);
   Keyboard.release(KEY_E);
   Keyboard.release(KEY_U);
