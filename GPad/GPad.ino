@@ -79,13 +79,13 @@ void loop()
    {
      Mouse.set_buttons(1, 0, 0);
      digitalWrite(PIN_D6,HIGH);
-     delay(250);
+     delay(100);
    }
    if (!digitalRead(Q))
    {
      digitalWrite(PIN_D6,HIGH);
      Mouse.set_buttons(0, 0, 1);
-     delay(250);
+     delay(100);
    }
     if (!digitalRead(I))
    {
