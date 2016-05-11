@@ -32,7 +32,7 @@ wsad
 ikjl
 
 **Select, Start> 
-fh
+Backspace key, Enter key
 
 **L1,L2> 
 right-click e
