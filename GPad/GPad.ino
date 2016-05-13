@@ -99,6 +99,11 @@ void loop()
      digitalWrite(PIN_D6,HIGH);
      delay(10);
      }
+   }else{
+    if (!digitalRead(Q) &&!GameMode)
+      Mouse.set_buttons(0,0,1);
+    else
+      Mouse.set_buttons(0,0,0);
    }
    if (!digitalRead(Q))
    {
@@ -117,6 +122,11 @@ void loop()
      Mouse.set_buttons(0, 0, 1);
      delay(10);
     }
+   }else{
+    if (!digitalRead(O) && !GameMode)
+      Mouse.set_buttons(1,0,0);
+    else
+      Mouse.set_buttons(0,0,0);
    }
     if (!digitalRead(I))
    {
