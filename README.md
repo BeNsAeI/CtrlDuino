@@ -28,7 +28,7 @@ then press "L2" and "R2" at the same time to toggle between O/Q and Left-Click/R
 it is recommended to use "Select" and "Start" again to toggle it back to locked.
 the Teensy's LED indicates if it locked (LED off) or it is unlocked (LED on)
 
-sample Output:
+#sample Output:
 
 **Directions Pad> 
 wsad
@@ -53,7 +53,7 @@ moves the mouse
 
 Change the KEY_A (which is key A on keyboard) with any other letter for letters.
 
-more here:
+#more here:
 
 http://www.pjrc.com/teensy/td_keyboard.html
 
