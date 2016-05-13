@@ -22,6 +22,11 @@ Important information:
 
 **otherwise code won't compile!
 
+#GameMode:
+press "Select" and "Start" together to toggle lock on gamemode feature
+then press "L2" and "R2" at the same time to toggle between O/Q and Left-Click/Right-Click input
+it is recommended to use "Select" and "Start" again to toggle it back to locked.
+the Teensy's LED indicates if it locked (LED off) or it is unlocked (LED on)
 
 sample Output:
 
