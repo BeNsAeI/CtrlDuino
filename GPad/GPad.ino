@@ -73,7 +73,10 @@ void loop()
   getJoystick();
 //  xReading = 0;
 //  yReading = 0;
-  digitalWrite(PIN_D6,LOW);
+  if(GameModeLock)
+    digitalWrite(PIN_D6,LOW);
+  else
+    digitalWrite(PIN_D6,HIGH);
   while(true)
   {
     delay(DL);
@@ -307,7 +310,10 @@ void loop()
    {
       getJoystick();
       Mouse.set_buttons(0, 0, 0);
-      digitalWrite(PIN_D6,LOW);
+        if(GameModeLock)
+          digitalWrite(PIN_D6,LOW);
+        else
+          digitalWrite(PIN_D6,HIGH);
       break;
    }
   }
@@ -330,7 +336,10 @@ void loop()
   Keyboard.release(KEY_LEFT);
   Keyboard.release(KEY_RIGHT);
   Mouse.set_buttons(0, 0, 0);
-  digitalWrite(PIN_D6,LOW);
+  if(GameModeLock)
+    digitalWrite(PIN_D6,LOW);
+  else
+    digitalWrite(PIN_D6,HIGH);
   GameModeSet = true;
   GameModeLockSet = true;
 }
