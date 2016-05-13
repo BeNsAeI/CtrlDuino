@@ -12,6 +12,10 @@ int W = PIN_F0;
 int A = PIN_F1;
 int H = PIN_F4;
 int F = PIN_F5;
+bool GameMode = false;
+bool GameModeSet = true;
+bool GameModeLock = true;
+bool GameModeLockSet = true;
 int xReading;
 int yReading;
 int DP = 1;
@@ -77,15 +81,39 @@ void loop()
     Mouse.move(xReading, yReading, 0);
     if (!digitalRead(O))
    {
+    if(!digitalRead(Q)&& !GameMode && GameModeSet && !GameModeLock)
+    {
+      GameMode = true;
+      GameModeSet = false;
+    }
+    if(!digitalRead(Q)&& GameMode && GameModeSet && !GameModeLock)
+    {
+      GameMode = false;
+      GameModeSet = false;
+    }
+    if(!GameMode){
      Mouse.set_buttons(1, 0, 0);
      digitalWrite(PIN_D6,HIGH);
      delay(10);
+     }
    }
    if (!digitalRead(Q))
    {
+    if(!digitalRead(O)&& !GameMode && GameModeSet && !GameModeLock)
+    {
+      GameMode = true;
+      GameModeSet = false;
+    }
+    if(!digitalRead(O)&& GameMode && GameModeSet && !GameModeLock)
+    {
+      GameMode = false;
+      GameModeSet = false;
+    }
+    if(!GameMode){
      digitalWrite(PIN_D6,HIGH);
      Mouse.set_buttons(0, 0, 1);
      delay(10);
+    }
    }
     if (!digitalRead(I))
    {
@@ -190,6 +218,14 @@ void loop()
    }
    if (!digitalRead(F))
    {
+    if(!digitalRead(H) && GameModeLockSet)
+    {
+      if(GameModeLock)
+       GameModeLock = false;
+      else
+        GameModeLock = true;
+      GameModeLockSet = false;
+    }
      Keyboard.press(KEY_BACKSPACE);
      digitalWrite(PIN_D6,HIGH);
    }   else
@@ -198,20 +234,30 @@ void loop()
    }
    if (!digitalRead(H))
    {
+    if(!digitalRead(F) && GameModeLockSet)
+    {
+      if(GameModeLock)
+        GameModeLock = false;
+      else
+        GameModeLock = true;
+      GameModeLockSet = false;
+    }
      Keyboard.press(KEY_ENTER);
      digitalWrite(PIN_D6,HIGH);
    }   else
    {
     Keyboard.release(KEY_ENTER);
    }
-  /* if (!digitalRead(Q))
-   {
-     Keyboard.press(KEY_Q);
-     digitalWrite(PIN_D6,HIGH);
-   }   else
-   {
-    Keyboard.release(KEY_Q);
-   }*/
+   if(GameMode){
+    if (!digitalRead(Q))
+    {
+      Keyboard.press(KEY_Q);
+      digitalWrite(PIN_D6,HIGH);
+    }   else
+    {
+     Keyboard.release(KEY_Q);
+    }
+   }
    if (!digitalRead(E))
    {
      Keyboard.press(KEY_E);
@@ -227,15 +273,17 @@ void loop()
    }   else
    {
     Keyboard.release(KEY_U);
-   }/*
-   if (!digitalRead(O))
-   {
-     Keyboard.press(KEY_O);
-     digitalWrite(PIN_D6,HIGH);
-   }   else
-   {
-    Keyboard.release(KEY_O);
-   }*/
+   }
+   if(GameMode){
+    if (!digitalRead(O))
+    {
+      Keyboard.press(KEY_O);
+      digitalWrite(PIN_D6,HIGH);
+    }   else
+    {
+     Keyboard.release(KEY_O);
+    }
+   }
    if( 
    digitalRead(Q) &&
    digitalRead(E) &&
@@ -283,5 +331,7 @@ void loop()
   Keyboard.release(KEY_RIGHT);
   Mouse.set_buttons(0, 0, 0);
   digitalWrite(PIN_D6,LOW);
+  GameModeSet = true;
+  GameModeLockSet = true;
 }
 
