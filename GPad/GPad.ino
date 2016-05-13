@@ -5,9 +5,9 @@ int K = PIN_B3;
 int D = PIN_B7;
 int S = PIN_D0;
 int Q = PIN_D2;
-int E = PIN_D3;
+int E = PIN_C6;
 int O = PIN_D1;
-int U = PIN_C6;
+int U = PIN_D3;
 int W = PIN_F0;
 int A = PIN_F1;
 int H = PIN_F4;
@@ -238,10 +238,10 @@ void loop()
    }*/
    if( 
    digitalRead(Q) &&
-   //digitalRead(E) &&
+   digitalRead(E) &&
    digitalRead(H) &&
    digitalRead(F) &&
-   //digitalRead(U) &&
+   digitalRead(U) &&
    digitalRead(O) &&
    digitalRead(I) &&
    digitalRead(K) &&
