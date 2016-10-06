@@ -60,3 +60,6 @@ http://www.pjrc.com/teensy/td_keyboard.html
 Watch it in action here:
 
 https://youtu.be/AOS0tR77WrE
+
+Please have a look at the 3D files ready to print:
+http://www.thingiverse.com/thing:1551841
