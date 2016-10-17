@@ -63,3 +63,6 @@ https://youtu.be/AOS0tR77WrE
 
 Please have a look at the 3D files ready to print:
 http://www.thingiverse.com/thing:1551841
+
+Check out my website for more awesome projects:
+people.oregonstate.edu/~Saeedib/
