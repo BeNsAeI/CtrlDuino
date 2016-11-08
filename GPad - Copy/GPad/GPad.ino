@@ -27,9 +27,9 @@ bool GameMode = false;
 bool GameModeSet = true;
 bool GameModeLock = true;
 bool GameModeLockSet = true;
-int xReading; 
+int xReading;
 int yReading;
-int DP = 3;
+int DP = 7;
 void setup()   {                
   Mouse.begin();
   Serial.begin(9600);
@@ -61,7 +61,7 @@ void setup()   {
 
 void loop()                     
 {
-  int DL = 5;
+  int DL = 25;
   while(true)
   {
     delay(DL);
