@@ -61,7 +61,7 @@ void setup()   {
 
 void loop()                     
 {
-  int DL = 5;
+  int DL = 1;
   while(true)
   {
     delay(DL);

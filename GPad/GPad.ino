@@ -59,17 +59,17 @@ void setup()   {
   value4 = analogRead(joyPin4);
   
   if((value3) > 600)
-    xReading = xReading - (((value3)- 600)/20);
+    xReading = xReading - (((value3)- 600)/30);
   else if((value3) < 400)
-     xReading = xReading + (-1)*(((value3)- 400)/20);
+     xReading = xReading + (-1)*(((value3)- 400)/30);
   if((value4) > 600)
-    yReading = yReading - (((value4)- 600)/20);
+    yReading = yReading - (((value4)- 600)/30);
   else if((value4) < 400)
-     yReading = yReading + (-1)*(((value4)- 400)/20);
+     yReading = yReading + (-1)*(((value4)- 400)/30);
  }
 void loop()                     
 {
-  int DL = 25;
+  int DL = 1;
   getJoystick();
 //  xReading = 0;
 //  yReading = 0;
