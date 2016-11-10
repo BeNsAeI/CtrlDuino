@@ -1,27 +1,27 @@
-int I = PIN_B0;
-int J = PIN_B1;
-int L = PIN_B2;
-int K = PIN_B3;
+int I = PIN_F4;
+int J = PIN_F7;
+int L = PIN_F5;
+int K = PIN_F6;
 int D = PIN_B7;
 int S = PIN_D0;
-int Q = PIN_D2;
-int E = PIN_C6;
-int O = PIN_D1;
-int U = PIN_D3;
-int W = PIN_F0;
-int A = PIN_F1;
-int H = PIN_F4;
-int F = PIN_F5;
-int C = PIN_F7;
-int V = PIN_D6;
-int mu = PIN_C7;
-int md = PIN_D4;
-int ml = PIN_D7;
-int mr = PIN_D5;
-int up = PIN_B6;
-int down = PIN_B5;
-int left = PIN_F6;
-int right = PIN_B4;
+int Q = PIN_B2;
+int E = PIN_B1;
+int O = PIN_F1;
+int U = PIN_F0;
+int W = PIN_B0;
+int A = PIN_B3;
+int H = PIN_D4;
+int F = PIN_D5;
+int C = PIN_E6;
+int V = PIN_E6;
+int mu = PIN_B6;
+int md = PIN_B5;
+int ml = PIN_B4;
+int mr = PIN_D7;
+int up = PIN_D1;
+int down = PIN_C6;
+int left = PIN_C7;
+int right = PIN_D6;
 
 bool GameMode = false;
 bool GameModeSet = true;
@@ -120,7 +120,7 @@ void loop()
    {
     Keyboard.release(KEY_I);
    }
-   if (!digitalRead(V))
+   if (!digitalRead(V)&&!digitalRead(H))
    {
      Keyboard.press(KEY_V);
       //digitalWrite(PIN_D6,HIGH);
@@ -128,7 +128,7 @@ void loop()
    {
     Keyboard.release(KEY_V);
    }
-   if (!digitalRead(C))
+   if (!digitalRead(C)&&!digitalRead(F))
    {
      Keyboard.press(KEY_C);
       //digitalWrite(PIN_D6,HIGH);
@@ -251,7 +251,7 @@ void loop()
    {
     Keyboard.release(KEY_W);
    }
-   if (!digitalRead(F))
+   if (!digitalRead(F) && !(!digitalRead(C)))
    {
     if(!digitalRead(H) && GameModeLockSet)
     {
@@ -267,7 +267,7 @@ void loop()
    {
     Keyboard.release(KEY_BACKSPACE);
    }
-   if (!digitalRead(H))
+   if (!digitalRead(H)&& !(!digitalRead(V)))
    {
     if(!digitalRead(F) && GameModeLockSet)
     {
