@@ -1,35 +1,7 @@
 #include <SoftwareSerial.h>
 SoftwareSerial Genotronex(PIN_D2, PIN_D3);
 int BluetoothData;
-int I = PIN_F4;
-int J = PIN_F7;
-int L = PIN_F5;
-int K = PIN_F6;
-int D = PIN_B7;
-int S = PIN_D0;
-int Q = PIN_B2;
-int E = PIN_B1;
-int O = PIN_F1;
-int U = PIN_F0;
-int W = PIN_B0;
-int A = PIN_B3;
-int H = PIN_D4;
-int F = PIN_D5;
-int C = PIN_E6;
-int V = PIN_E6;
-int mu = PIN_B6;
-int md = PIN_B5;
-int ml = PIN_B4;
-int mr = PIN_D7;
-int up = PIN_D1;
-int down = PIN_C6;
-int left = PIN_C7;
-int right = PIN_D6;
-
-bool GameMode = false;
-bool GameModeSet = true;
-bool GameModeLock = true;
-bool GameModeLockSet = true;
+int LED = PIN_D6
 int xReading; 
 int yReading;
 int DP = 3;
@@ -38,30 +10,8 @@ void setup()   {
   Serial.begin(9600);
   Genotronex.begin(9600);
   Genotronex.println("Connected...");
-  pinMode(Q, INPUT_PULLUP);
-  pinMode(E, INPUT_PULLUP);
-  pinMode(H, INPUT_PULLUP);
-  pinMode(F, INPUT_PULLUP);
-  pinMode(U, INPUT_PULLUP);
-  pinMode(O, INPUT_PULLUP);
-  pinMode(I, INPUT_PULLUP);
-  pinMode(K, INPUT_PULLUP);
-  pinMode(J, INPUT_PULLUP);
-  pinMode(L, INPUT_PULLUP);
-  pinMode(W, INPUT_PULLUP);
-  pinMode(S, INPUT_PULLUP);
-  pinMode(D, INPUT_PULLUP);
-  pinMode(A, INPUT_PULLUP);
-  pinMode(C, INPUT_PULLUP);
-  pinMode(PIN_D6, INPUT_PULLUP);
-  pinMode(up, INPUT_PULLUP);
-  pinMode(down, INPUT_PULLUP);
-  pinMode(left, INPUT_PULLUP);
-  pinMode(right, INPUT_PULLUP);
-  pinMode(mu, INPUT_PULLUP);
-  pinMode(md, INPUT_PULLUP);
-  pinMode(ml, INPUT_PULLUP);
-  pinMode(mr, INPUT_PULLUP);
+  pinMode(PIN_D6, OUTPUT);
+
 }
 
 void loop()                     
@@ -71,6 +21,8 @@ void loop()
   {
     delay(DL);
     Mouse.move(xReading, yReading, 0);
+    if (Genotronex.available())
+      BluetoothData=Genotronex.read();
     if (!digitalRead(O))
    {
     if(!digitalRead(Q)&& !GameMode && GameModeSet && !GameModeLock)
